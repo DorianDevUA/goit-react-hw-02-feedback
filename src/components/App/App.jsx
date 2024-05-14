@@ -12,7 +12,9 @@ export class App extends Component {
   };
 
   updateFeedback = feedbackType => {
-    this.setState({ [feedbackType]: this.state[feedbackType] + 1 });
+    this.setState(prevState => ({
+      [feedbackType]: prevState[feedbackType] + 1
+    }))
   };
 
   getFeedbackTypes = () => {
